@@ -1,0 +1,13 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: github-component-with-adrs
+  title: Github Public Component With ADRs
+  description: A Service with ADRs registerd available on Github as public site
+  annotations:
+    backstage.io/adr-location: adr
+spec:
+  type: service
+  lifecycle: experimental
+  owner: user:kritchalach
