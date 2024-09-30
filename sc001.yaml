@@ -1,0 +1,67 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage-app
+  description: The front-end /package/app uses React.js
+  labels:
+    backstage.krungthai/custom: frontend
+  annotations:
+    endoflife.date/products: nodejs@18,react@18.0
+  tags:
+    - devtools
+  links:
+    - url: https://backstage.io
+      title: CNCF Backstage original site
+    - url: https://backstage.krungthai/auth
+      type: keycloak-admin
+spec:
+  type: website
+  lifecycle: development
+  owner: group:architect
+  system: backstage
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage-backend
+  description: Typescript nodejs
+  labels:
+    backstage.krungthai/custom: backend
+  annotations:
+    endoflife.date/products: nodejs,postgresql
+  tags:
+    - devtools
+  links:
+    - url: https://backstage.io
+      title: CNCF Backstage original site
+    - url: https://backstage.krungthai/auth
+      type: keycloak-admin
+spec:
+  type: website
+  lifecycle: development
+  owner: group:architect
+  system: backstage
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: backstage
+  description: Backstage system
+spec:
+  type: Vayu-P
+  lifecycle: development
+  owner: group:architect
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backstage-keycloak
+  description: Simple RBAC using Group+Users on keycloak
+  annotations:
+    endoflife.date/products: postgresql@16,keycloak@25.0
+spec:
+  type: website
+  lifecycle: development
+  owner: group:architect
+  system: backstage
